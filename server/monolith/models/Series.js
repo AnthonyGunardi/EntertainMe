@@ -1,6 +1,6 @@
 const { getDb } = require('../config/mongodb')
 const db = getDb()
-const series = db.collection('Series')
+const series = db.collection('TV_Series')
 const { ObjectID } = require('mongodb')
 
 class SeriesModel {
@@ -27,6 +27,8 @@ class SeriesModel {
       _id: ObjectID(id)
     })
   }
+
 }
 
 module.exports = SeriesModel
+

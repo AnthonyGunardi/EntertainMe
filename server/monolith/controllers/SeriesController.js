@@ -13,12 +13,12 @@ class SeriesController {
 
   static async addSeries(req, res) {
     try {
-      const {title, overview, posterUrl, genre} = req.body
-      const {newSeries} = await SeriesModel.addSeries({title, overview, posterUrl, genre})
-      res.status(201).json(newSeries[0])
+      const { title, overview, poster_path, popularity, tags } = req.body
+      const seriesData = { title, overview, poster_path, popularity, tags }
+      const { ops } = await SeriesModel.addSeries(seriesData)
+      res.status(201).json(ops[0])
     } 
     catch (err) {
-      console.log(err);
       res.status(500).json(err)
     }
   }
@@ -36,9 +36,10 @@ class SeriesController {
 
   static async updateSeries(req, res) {
     try {
-      const {id} = req.params
-      const {title, overview, posterUrl, genre} = req.body
-      const {value} = await SeriesModel.updateSeries(id, {title, overview, posterUrl, genre})
+      const { id } = req.params
+      const { title, overview, poster_path, popularity, tags } = req.body
+      const seriesData = { title, overview, poster_path, popularity, tags }
+      const {value} = await SeriesModel.updateSeries(id, seriesData)
       res.status(201).json(value)
     } 
     catch (err) {
@@ -50,7 +51,7 @@ class SeriesController {
     try {
       const {id} = req.params
       const series = await SeriesModel.deleteSeries(id)
-      res.status(201).json({message: 'Series is deleted'})
+      res.status(201).json({message: 'Series is Deleted'})
     } 
     catch (err) {
       res.status(500).json(err)

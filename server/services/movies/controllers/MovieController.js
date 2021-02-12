@@ -13,9 +13,10 @@ class MovieController {
 
   static async addMovie(req, res) {
     try {
-      const {title, summary, posterUrl, genre} = req.body
-      const { newMovie } = await MovieModel.addMovie({title, summary, posterUrl, genre})
-      res.status(201).json(newMovie[0])
+      const { title, overview, poster_path, popularity, tags } = req.body
+      const movieData = { title, overview, poster_path, popularity, tags }
+      const { ops } = await MovieModel.addMovie(movieData)
+      res.status(201).json(ops[0])
     } 
     catch (err) {
       res.status(500).json(err)
@@ -36,8 +37,9 @@ class MovieController {
   static async updateMovie(req, res) {
     try {
       const {id} = req.params
-      const {title, summary, posterUrl, genre} = req.body
-      const {value} = await MovieModel.updateMovie(id, {title, summary, posterUrl, genre})
+      const { title, overview, poster_path, popularity, tags } = req.body
+      const movieData = { title, overview, poster_path, popularity, tags }
+      const { value } = await MovieModel.updateMovie(id, movieData)
       res.status(201).json(value)
     } 
     catch (err) {

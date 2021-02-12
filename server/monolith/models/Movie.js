@@ -27,6 +27,7 @@ class MovieModel {
       _id: ObjectID(id)
     })
   }
+
 }
 
 module.exports = MovieModel

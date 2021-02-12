@@ -13,9 +13,10 @@ class SeriesController {
 
   static async addSeries(req, res) {
     try {
-      const {title, summary, posterUrl, genre} = req.body
-      const { newSeries } = await SeriesModel.addSeries({title, summary, posterUrl, genre})
-      res.status(201).json(newSeries[0])
+      const { title, overview, poster_path, popularity, tags } = req.body
+      const seriesData = { title, overview, poster_path, popularity, tags }
+      const { ops } = await SeriesModel.addSeries(seriesData)
+      res.status(201).json(ops[0])
     } 
     catch (err) {
       res.status(500).json(err)
@@ -26,7 +27,6 @@ class SeriesController {
     try {
       const {id} = req.params
       const movie = await SeriesModel.getSeriesById(id)
-
       res.status(200).json(movie)
     } 
     catch (err) {
@@ -37,8 +37,9 @@ class SeriesController {
   static async updateSeries(req, res) {
     try {
       const {id} = req.params
-      const {title, summary, posterUrl, genre} = req.body
-      const {value} = await SeriesModel.updateSeries(id, {title, summary, posterUrl, genre})
+      const { title, overview, poster_path, popularity, tags } = req.body
+      const seriesData = { title, overview, poster_path, popularity, tags }
+      const { value } = await SeriesModel.updateSeries(id, seriesData)
       res.status(201).json(value)
     } 
     catch (err) {
