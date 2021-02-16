@@ -12,7 +12,7 @@ class SeriesController {
       } 
        else {
         const { data } = await axios.get(seriesURL)
-        const setCache = await redis.set('seriescache', JSON.stringify(data), 'EX', 1800)       
+        const setCache = await redis.set('seriescache', JSON.stringify(data))       
         res.status(200).json(data)
       }
     } 
