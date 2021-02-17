@@ -1,0 +1,6 @@
+export {default as LandingPage} from './LandingPage'
+export {default as MoviesPage} from './MoviesPage'
+export {default as MovieDetailPage} from './MovieDetailPage'
+export {default as SeriesPage} from './SeriesPage'
+export {default as SeriesDetailPage} from './SeriesDetailPage'
+export {default as Favorite} from './Favorite'

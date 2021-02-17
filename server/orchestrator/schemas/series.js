@@ -75,7 +75,7 @@ const resolvers = {
           data: { title, overview, poster_path, popularity, tags }
         })
         const delCache = await redis.del('seriesCache')
-        return data
+        return data.ops[0]
       } 
       catch (err) {
         console.log(err)
@@ -104,7 +104,7 @@ const resolvers = {
         const { _id } = args
         const { data } = await axios({
           method: 'DELETE',
-          url: `${seriesURL}/${_id}`,
+          url: `${seriesURL}/${_id}`
         })
         const delCache = await redis.del('seriesCache')
         return data
@@ -118,5 +118,5 @@ const resolvers = {
 
 module.exports = {
   typeDefs,
-  resolvers,
+  resolvers
 }

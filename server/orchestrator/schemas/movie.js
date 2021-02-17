@@ -75,7 +75,7 @@ const resolvers = {
           data: { title, overview, poster_path, popularity, tags }
         })
         const delCache = await redis.del('movieCache')
-        return data
+        return data.ops[0]
       } 
       catch (err) {
         console.log(err)
@@ -118,5 +118,5 @@ const resolvers = {
 
 module.exports = {
   typeDefs,
-  resolvers,
+  resolvers
 }
