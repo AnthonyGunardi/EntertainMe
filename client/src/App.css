@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.footer-copyright {
+  background-color: #343a40;
+  position: fixed;
+  margin: 0;
+  bottom: 0;
+  width: 100%;
+}

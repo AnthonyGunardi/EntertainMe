@@ -28,7 +28,7 @@ function Navigation() {
             Series
           </Link>
           <Link className="nav-item nav-link active" to="/favorite/">
-            Favorite
+            Favorites
           </Link>
         </div>
       </div>
