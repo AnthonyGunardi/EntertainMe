@@ -2,13 +2,21 @@
   "name": "movies",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnthonyGunardi/EntertainMe.git"
+  },
   "keywords": [],
-  "author": "",
+  "author": "Anthony Gunardi",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnthonyGunardi/EntertainMe/issues"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",

@@ -2,13 +2,21 @@
   "name": "orchestrator",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnthonyGunardi/EntertainMe.git"
+  },
   "keywords": [],
-  "author": "",
+  "author": "Anthony Gunardi",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnthonyGunardi/EntertainMe/issues"
+  },
   "dependencies": {
     "apollo-server": "^2.21.0",
     "axios": "^0.21.1",

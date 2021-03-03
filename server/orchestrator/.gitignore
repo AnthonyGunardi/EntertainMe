@@ -71,6 +71,14 @@ firebase-debug.*.log*
 dist
 .DS_Store
 .cache
+.expo/*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
 
 # Output of 'npm pack'
 *.tgz
